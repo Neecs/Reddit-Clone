@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.message.text = "Hello, annie"
+
     }
 
     override fun onDestroy() {

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Posts_Layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/communityImage"
+        android:layout_width="77dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/dog" />
+
+    <TextView
+        android:id="@+id/comunnityTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="r/Perritos"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toEndOf="@+id/communityImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/PostTitle"
+        android:layout_width="332dp"
+        android:layout_height="38dp"
+        android:text="¿Cual es tu raza de perro favorita?"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/postText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/communityImage" />
+
+    <TextView
+        android:id="@+id/postText"
+        android:layout_width="332dp"
+        android:layout_height="90dp"
+        android:text="Mi raza de perro favorita es el Golden Retriever. Son increíblemente amigables, leales y tienen una gran inteligencia, lo que los hace ideales como compañeros y fáciles de entrenar. Además, su naturaleza cariñosa y su disposición para ayudar los convierte en excelentes perros de terapia."
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/postImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/PostTitle" />
+
+    <ImageView
+        android:id="@+id/postImage"
+        android:layout_width="321dp"
+        android:layout_height="228dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postText"
+        app:srcCompat="@drawable/golden" />
+
+    <ImageButton
+        android:id="@+id/optionsButton"
+        android:layout_width="61dp"
+        android:layout_height="34dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintStart_toEndOf="@id/comunnityTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.075"
+        app:srcCompat="@drawable/dot" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

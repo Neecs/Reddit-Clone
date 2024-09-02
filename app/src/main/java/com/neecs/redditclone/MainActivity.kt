@@ -28,8 +28,17 @@ class MainActivity : AppCompatActivity() {
 
         // Usar lifecycleScope para observar el StateFlow del ViewModel
         lifecycleScope.launch {
-            postViewModel.postList.collect { posts ->
-                adapter.submitList(posts)
+            postViewModel.uiState.collect { state ->
+                if (state.isLoading) {
+                    // Mostrar indicador de carga
+                } else {
+                    // Actualizar el adaptador con los posts cargados
+                    adapter.submitList(state.posts)
+                }
+
+                state.errorMessage?.let {
+                    // Mostrar mensaje de error
+                }
             }
         }
     }

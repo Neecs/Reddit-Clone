@@ -11,13 +11,10 @@
         android:id="@+id/postImage"
         android:layout_width="282dp"
         android:layout_height="256dp"
-        app:layout_constraintBottom_toTopOf="@id/postReactions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/postText"
-        app:srcCompat="@drawable/golden"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="201dp" />
+        app:srcCompat="@drawable/golden" />
 
     <ImageView
         android:id="@+id/communityImage"
@@ -89,71 +86,84 @@
         app:layout_constraintVertical_bias="0.093"
         app:srcCompat="@drawable/dot" />
 
-    <LinearLayout
-        android:id="@+id/postReactions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        android:showDividers="middle"
+    <ImageButton
+        android:id="@+id/upvote"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/postImage">
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/uparrow" />
 
-        <ImageButton
-            android:id="@+id/upvote"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/uparrow" />
+    <ImageButton
+        android:id="@+id/downvote"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="start"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.286"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/arrowdown" />
 
-        <ImageButton
-            android:id="@+id/downvote"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_gravity="start"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/arrowdown" />
+    <ImageButton
+        android:id="@+id/comments"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="start|end"
+        android:layout_weight="1"
 
-        <ImageButton
-            android:id="@+id/comments"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_gravity="start|end"
-            android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/comments" />
 
-            android:background="#00FFFFFF"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/comments" />
+    <ImageButton
+        android:id="@+id/medal"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="end"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/medalla" />
 
-        <ImageButton
-            android:id="@+id/medal"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/medalla" />
-
-        <ImageButton
-            android:id="@+id/share"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:background="#00FFFFFF"
-            app:layout_constraintTop_toBottomOf="@id/postReactions"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/compartir" />
-
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/share"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="end"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postImage"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/compartir" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

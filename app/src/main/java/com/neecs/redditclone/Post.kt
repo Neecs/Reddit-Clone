@@ -1,6 +1,10 @@
 package com.neecs.redditclone
 
-data class Post(
+import androidx.annotation.DrawableRes
 
-    val communityName: String
+data class Post(
+    val communityName: String,
+    val title: String,
+    val content: String,
+    @DrawableRes val drawableRes: Int
 )

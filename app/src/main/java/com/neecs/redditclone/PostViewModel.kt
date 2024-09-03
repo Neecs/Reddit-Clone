@@ -15,14 +15,17 @@ class PostViewModel : ViewModel() {
     }
 
     private fun loadPosts() {
-        // Simular carga de datos
         _uiState.value = PostUIState(isLoading = true)
 
-        // Simulación de carga de datos
-        // En una aplicación real, aquí se realizaría una solicitud de red o una operación de base de datos.
-        val posts = List(10) { index -> Post("r/Community $index") }
+        val posts = List(10) { index ->
+            Post(
+                communityName = "r/Community $index",
+                title = "Post Title $index",
+                content = "This is the content of post $index",
+                drawableRes = R.drawable.golden
+            )
+        }
 
-        // Actualizar el estado con los datos cargados
         _uiState.value = PostUIState(posts = posts, isLoading = false)
     }
 

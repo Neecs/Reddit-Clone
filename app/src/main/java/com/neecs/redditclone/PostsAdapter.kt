@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.neecs.redditclone.databinding.ViewPostBinding
 
-// La clase ViewHolder permanece igual
 class PostsAdapter : ListAdapter<Post, PostsAdapter.ViewHolder>(PostDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,15 +22,16 @@ class PostsAdapter : ListAdapter<Post, PostsAdapter.ViewHolder>(PostDiffCallback
     class ViewHolder(private val binding: ViewPostBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(post: Post) {
             binding.comunnityTitle.text = post.communityName
+            binding.postTitle.text = post.title
+            binding.postText.text = post.content
+            binding.postImage.setImageResource(post.drawableRes)
         }
     }
 }
 
-// Clase DiffUtil.Callback para optimizar las actualizaciones de la lista
 class PostDiffCallback : DiffUtil.ItemCallback<Post>() {
     override fun areItemsTheSame(oldItem: Post, newItem: Post): Boolean {
-        // Aquí puedes comparar los identificadores únicos de los posts, si los tienes.
-        return oldItem == newItem // Usa una propiedad única si tienes una
+        return oldItem == newItem
     }
 
     override fun areContentsTheSame(oldItem: Post, newItem: Post): Boolean {

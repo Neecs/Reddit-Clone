@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Reddit Clone</string>
+    <string name="post_title">Post Title</string>
+    <string name="post_content">This is the content of the post.</string>
+    <string name="upvote">Upvote</string>
+    <string name="downvote">Downvote</string>
+    <string name="comments">Comments</string>
+    <string name="share">Share</string>
+    <string name="medal">Medal</string>
+    <string name="options">Options</string>
+    <string name="community_title">r/Perritos</string>
 </resources>

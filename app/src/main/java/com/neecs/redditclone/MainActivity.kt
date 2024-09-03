@@ -21,18 +21,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configurar el RecyclerView
         adapter = PostsAdapter()
         binding.recycler.layoutManager = LinearLayoutManager(this)
         binding.recycler.adapter = adapter
 
-        // Usar lifecycleScope para observar el StateFlow del ViewModel
         lifecycleScope.launch {
             postViewModel.uiState.collect { state ->
                 if (state.isLoading) {
                     // Mostrar indicador de carga
                 } else {
-                    // Actualizar el adaptador con los posts cargados
                     adapter.submitList(state.posts)
                 }
 

@@ -1,6 +1,7 @@
 package com.neecs.redditclone
 
 import androidx.lifecycle.ViewModel
+import com.neecs.redditclone.ui.theme.Post
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -18,11 +19,12 @@ class PostViewModel : ViewModel() {
         _uiState.value = PostUIState(isLoading = true)
 
         val posts = List(10) { index ->
-            Post(
+            com.neecs.redditclone.ui.theme.Post(
                 communityName = "r/Community $index",
                 title = "Post Title $index",
                 content = "This is the content of post $index",
-                drawableRes = R.drawable.golden
+                postImageRes = R.drawable.golden,
+                communityImageRes = R.drawable.dog
             )
         }
 

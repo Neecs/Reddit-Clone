@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.neecs.redditclone.databinding.ViewPostBinding
+import com.neecs.redditclone.ui.theme.Post
 
 class PostsAdapter : ListAdapter<Post, PostsAdapter.ViewHolder>(PostDiffCallback()) {
 
@@ -24,7 +25,7 @@ class PostsAdapter : ListAdapter<Post, PostsAdapter.ViewHolder>(PostDiffCallback
             binding.comunnityTitle.text = post.communityName
             binding.postTitle.text = post.title
             binding.postText.text = post.content
-            binding.postImage.setImageResource(post.drawableRes)
+            binding.postImage.setImageResource(post.postImageRes)
         }
     }
 }

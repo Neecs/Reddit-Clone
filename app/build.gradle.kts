@@ -33,18 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
-        viewBinding = true
-    }
     buildFeatures {
+        viewBinding = true
         compose = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.0"
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
@@ -72,6 +66,7 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     // Android Studio Preview support
     implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.constraintlayout.compose)
     debugImplementation(libs.androidx.ui.tooling)
 
     // UI Tests
@@ -95,7 +90,6 @@ dependencies {
     implementation(libs.androidx.runtime.livedata)
     // Optional - Integration with RxJava
     implementation(libs.androidx.runtime.rxjava2)
-
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

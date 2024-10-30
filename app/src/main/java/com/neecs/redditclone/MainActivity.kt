@@ -2,36 +2,35 @@ package com.neecs.redditclone
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.tooling.preview.Preview
+import com.neecs.redditclone.ui.theme.PostList
 import com.neecs.redditclone.ui.theme.RedditCloneTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
+        setContentView(R.layout.activity_main)
+
+        val composeView = findViewById<ComposeView>(R.id.compose_view)
+        composeView.setContent {
             RedditCloneTheme {
-                Surface(color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
-                }
+                RedditCloneApp()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+fun RedditCloneApp() {
+    PostList()
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     RedditCloneTheme {
-        Greeting("Android")
+        RedditCloneApp()
     }
 }

@@ -1,47 +1,37 @@
 package com.neecs.redditclone
 
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.neecs.redditclone.databinding.ActivityMainBinding
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
+import com.neecs.redditclone.ui.theme.RedditCloneTheme
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-    private val postViewModel: PostViewModel by viewModels()
-    private lateinit var adapter: PostsAdapter
-
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        adapter = PostsAdapter()
-        binding.recycler.layoutManager = LinearLayoutManager(this)
-        binding.recycler.adapter = adapter
-
-        lifecycleScope.launch {
-            postViewModel.uiState.collect { state ->
-                if (state.isLoading) {
-                    // Mostrar indicador de carga
-                } else {
-                    adapter.submitList(state.posts)
-                }
-
-                state.errorMessage?.let {
-                    // Mostrar mensaje de error
+        setContent {
+            RedditCloneTheme {
+                Surface(color = MaterialTheme.colorScheme.background) {
+                    Greeting("Android")
                 }
             }
         }
     }
+}
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("com.neecs.redditclone.com.neecs.redditclone.MainActivity", "onDestroy")
+@Composable
+fun Greeting(name: String) {
+    Text(text = "Hello $name!")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    RedditCloneTheme {
+        Greeting("Android")
     }
 }
